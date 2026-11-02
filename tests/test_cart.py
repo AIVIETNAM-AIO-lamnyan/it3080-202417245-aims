@@ -11,10 +11,10 @@ class CartLimitTests(unittest.TestCase):
         cart = Cart()
         dvd = DigitalVideoDisc("Test DVD")
 
-        for _ in range(MAX_NUMBERS_ORDERED):
-            self.assertTrue(cart.add_dvd(dvd))
-
-        self.assertFalse(cart.add_dvd(dvd))
+        with contextlib.redirect_stdout(io.StringIO()):
+            for _ in range(MAX_NUMBERS_ORDERED):
+                self.assertTrue(cart.add_dvd(dvd))
+            self.assertFalse(cart.add_dvd(dvd))
         self.assertEqual(len(cart.items), MAX_NUMBERS_ORDERED)
 
     def test_add_dvd_to_non_full_cart(self):
