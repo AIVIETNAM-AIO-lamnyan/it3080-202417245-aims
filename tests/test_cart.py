@@ -47,6 +47,26 @@ class CartLimitTests(unittest.TestCase):
 
         self.assertEqual(cart.total_cost(), 25.5)
 
+    def test_sort_by_title_returns_dvds_in_title_order(self):
+        cart = Cart()
+        zulu = DigitalVideoDisc("Zulu", cost=20)
+        alpha = DigitalVideoDisc("Alpha", cost=30)
+        middle = DigitalVideoDisc("Middle", cost=10)
+        cart.items.extend([zulu, alpha, middle])
+
+        self.assertEqual(cart.sort_by_title(), [alpha, middle, zulu])
+        self.assertEqual(cart.items, [zulu, alpha, middle])
+
+    def test_sort_by_cost_returns_dvds_in_cost_order(self):
+        cart = Cart()
+        expensive = DigitalVideoDisc("Expensive", cost=30)
+        cheap = DigitalVideoDisc("Cheap", cost=10)
+        middle = DigitalVideoDisc("Middle", cost=20)
+        cart.items.extend([expensive, cheap, middle])
+
+        self.assertEqual(cart.sort_by_cost(), [cheap, middle, expensive])
+        self.assertEqual(cart.items, [expensive, cheap, middle])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -4,6 +4,10 @@ All notable changes to this project are documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- Cart sorting by DVD title or cost.
+
 ## [1.0.0] - 2026-11-03
 
 ### Added
