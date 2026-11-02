@@ -23,5 +23,9 @@ class Cart:
         print("The disc is not in the cart")
         return False
 
+    def print_cart(self):
+        for dvd in self.items:
+            print(dvd)
+
     def total_cost(self):
         return sum(item.cost for item in self.items)
