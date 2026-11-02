@@ -4,11 +4,10 @@ All notable changes to this project are documented in this file.
 
 ## [Unreleased]
 
-## [1.0.1] - 2026-11-03
+### Added
 
-### Fixed
-
-- Make DVD title searches case-insensitive.
+- Cart sorting by DVD title or cost.
+- Search DVDs by category.
 
 ## [1.0.0] - 2026-11-03
 

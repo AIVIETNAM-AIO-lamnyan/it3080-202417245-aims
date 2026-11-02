@@ -1,21 +1,28 @@
 import unittest
 
 from aims.dvd import DigitalVideoDisc
-from aims.search import search_by_title
+from aims.search import search_by_category, search_by_title
 
 
-class SearchByTitleTests(unittest.TestCase):
+class SearchTests(unittest.TestCase):
     def setUp(self):
         self.dvds = [
-            DigitalVideoDisc("The Lion King"),
-            DigitalVideoDisc("Star Wars"),
+            DigitalVideoDisc("The Lion King", "Animation"),
+            DigitalVideoDisc("Star Wars", "Science Fiction"),
+            DigitalVideoDisc("Aladdin", "Animation"),
         ]
 
-    def test_search_is_case_insensitive(self):
-        self.assertEqual(search_by_title(self.dvds, "lion"), [self.dvds[0]])
+    def test_search_by_category_returns_matching_dvds(self):
+        self.assertEqual(
+            search_by_category(self.dvds, "Animation"),
+            [self.dvds[0], self.dvds[2]],
+        )
 
-    def test_search_returns_empty_list_when_unmatched(self):
-        self.assertEqual(search_by_title(self.dvds, "aladdin"), [])
+    def test_search_by_category_returns_empty_list_when_unmatched(self):
+        self.assertEqual(search_by_category(self.dvds, "Comedy"), [])
+
+    def test_search_by_title_remains_available(self):
+        self.assertEqual(search_by_title(self.dvds, "The"), [self.dvds[0]])
 
 
 if __name__ == "__main__":

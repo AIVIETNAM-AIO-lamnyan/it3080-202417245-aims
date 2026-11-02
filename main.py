@@ -1,5 +1,6 @@
 from aims.dvd import DigitalVideoDisc
 from aims.cart import Cart
+from aims.search import search_by_category
 from aims.search import search_by_title
 
 
@@ -10,6 +11,9 @@ def main():
     cart.add_dvd(DigitalVideoDisc("Star Wars", "Science Fiction", "George Lucas", 87, 24.95))
     cart.add_dvd(DigitalVideoDisc("Aladdin", "Animation", cost=18.99))
     cart.print_cart()
+    print("Animation DVDs:")
+    for dvd in search_by_category(cart.items, "Animation"):
+        print(dvd)
     print("Search results for 'The':")
     for dvd in search_by_title(cart.items, "The"):
         print(dvd)
