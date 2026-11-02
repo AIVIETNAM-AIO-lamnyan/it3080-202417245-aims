@@ -4,6 +4,12 @@ All notable changes to this project are documented in this file.
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-11-03
+
+### Fixed
+
+- Make DVD title searches case-insensitive.
+
 ## [1.0.0] - 2026-11-03
 
 ### Added
