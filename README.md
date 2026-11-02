@@ -1,1 +1,6 @@
-# it3080-202417245-aims
+# AIMS-mini
+
+Ứng dụng mẫu cho các bài thực hành Quản lý cấu hình phần mềm – IT3180.
+
+- MSSV: 202417245
+- Chạy chương trình: `python main.py`
