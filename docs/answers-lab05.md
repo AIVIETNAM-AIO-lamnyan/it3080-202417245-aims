@@ -17,5 +17,6 @@ các phiên bản sẽ lệch nhau.
 
 `git log --all --oneline --grep "cherry picked from commit <FIX_SHA>"`
 kiểm tra các bản cherry-pick theo dấu truy vết. Ngoài ra,
-`git cherry -v origin/main origin/release/lab05` cho thấy các commit tương
-đương còn thiếu hoặc đã có giữa hai nhánh.
+`git cherry -v origin/release/lab05 origin/main` cho biết commit từ `main`
+nào chưa có bản tương đương trên `release/lab05` (`+` là chưa có, `-` là
+đã có commit tương đương).
