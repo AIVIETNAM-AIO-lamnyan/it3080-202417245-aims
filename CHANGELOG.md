@@ -7,6 +7,7 @@ All notable changes to this project are documented in this file.
 ### Added
 
 - Cart sorting by DVD title or cost.
+- Search DVDs by category.
 
 ## [1.0.0] - 2026-11-03
 
